@@ -1,5 +1,7 @@
+// targetting the main div container
 const $container = document.getElementById('container')
 
+// adding innerHTML in the container
 $container.innerHTML = `
 <div id = "menu" class = "menu">
     <button id='menuBtn' class="menu-btn"><i class="fas fa-bars"></i></button>
@@ -28,6 +30,7 @@ $container.innerHTML = `
     </div>
 </div>`
 
+// targetting all elements through variable added dynamically
 const $menu = document.getElementById('menu')
 const $menuBtn = document.getElementById('menuBtn')
 const $links = document.getElementById('links')
@@ -36,8 +39,10 @@ const $sectionOne = document.getElementById('sectionOne')
 const $sectionTwo = document.getElementById('sectiontwo')
 const $sectionThree = document.getElementById('sectionThree')
 
+// hiding menu at first place
 $links.style.display = 'none'
 
+// adding ecent listener to show the menu when button is clicked
 $menuBtn.addEventListener('click', function(){
     if($links.style.display === 'none'){
         $links.style.display = 'block'
@@ -49,11 +54,16 @@ $menuBtn.addEventListener('click', function(){
     }
 })
 
-
+// ***************************************************************************************************************************************
+    // adding and triggering css on section three when entered into the viewport
+// ***************************************************************************************************************************************
 const sectionThreeHeight = $sectionThree.clientHeight;
-console.log(sectionThreeHeight)
+// console.log(sectionThreeHeight)
+
+// event listerener on the document to behave when user scrolls
 document.addEventListener('scroll', visible);
 
+// funtion to return whether the element is in viewport or not
 function checkInView() {
     const viewportHeight = window.innerHeight;
     const scrollY = window.scrollY;
@@ -70,6 +80,8 @@ function checkInView() {
         return false;
 }
 
+
+// function to toggle between fade-in fade-out classes to trigger animation on element 3
 function visible() {
     if (checkInView()) {
         $sectionThree.classList.remove('fadeOut');
@@ -81,5 +93,9 @@ function visible() {
     }
 }
 
+// *********************************************************************************************************************************************
+// References
+
 // https://codepen.io/jr-cologne/pen/zdYdmx
 // https://developer.mozilla.org/en-US/
+// *********************************************************************************************************************************************
