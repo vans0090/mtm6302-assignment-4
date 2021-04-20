@@ -56,9 +56,9 @@ document.addEventListener('scroll', visible);
 
 function checkInView() {
     const viewportHeight = window.innerHeight;
-    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollY = window.scrollY;
     const scrollPosition = scrollY + viewportHeight;
-    const sectionThreePosition = $sectionThree.getBoundingClientRect().top + scrollY + viewportHeight;
+    const sectionThreePosition = $sectionThree.getBoundingClientRect().top;
 
     console.log(scrollPosition, sectionThreePosition)
 
@@ -82,3 +82,4 @@ function visible() {
 }
 
 // https://codepen.io/jr-cologne/pen/zdYdmx
+// https://developer.mozilla.org/en-US/
